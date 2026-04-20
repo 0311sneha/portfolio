@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)file:///C:/Users/Stuti/OneDrive/Desktop/spatula_smiles_portfolio.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sneha Pandit — Spatula Smiles &amp; Lifestyle</title>
+<link href="./spatula_smiles_portfolio_files/css2" rel="stylesheet">
+<style>
+  :root {
+    --cream: #faf6f0;
+    --warm-white: #fff9f2;
+    --terracotta: #c8603a;
+    --terracotta-light: #e8845f;
+    --ochre: #d4933a;
+    --sage: #7a8c6e;
+    --charcoal: #2c2c2c;
+    --mid: #5a5040;
+    --light-mid: #9a8e7e;
+    --divider: #e8ddd0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--cream);
+    color: var(--charcoal);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* GRAIN OVERLAY */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 1000;
+    opacity: 0.5;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    padding: 1.2rem 4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(250, 246, 240, 0.85);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--divider);
+  }
+
+  .nav-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-style: italic;
+    color: var(--terracotta);
+    letter-spacing: 0.02em;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 2.5rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    font-size: 0.78rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+
+  .nav-links a:hover { color: var(--terracotta); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-top: 5rem;
+  }
+
+  .hero-left {
+    padding: 8rem 4rem 4rem 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: fadeUp 1s ease both;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.72rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 1.5rem;
+  }
+
+  .hero-name {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 5vw, 5.5rem);
+    font-weight: 900;
+    line-height: 1.0;
+    color: var(--charcoal);
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-channel {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.2rem, 2vw, 1.8rem);
+    font-style: italic;
+    color: var(--terracotta);
+    margin-bottom: 2rem;
+  }
+
+  .hero-desc {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: var(--mid);
+    max-width: 420px;
+    margin-bottom: 3rem;
+  }
+
+  .hero-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.8rem;
+    background: var(--terracotta);
+    color: white;
+    padding: 0.9rem 2rem;
+    text-decoration: none;
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: background 0.2s, transform 0.2s;
+    width: fit-content;
+  }
+
+  .hero-cta:hover {
+    background: var(--terracotta-light);
+    transform: translateY(-2px);
+  }
+
+  .hero-right {
+    position: relative;
+    overflow: hidden;
+    background: var(--charcoal);
+    animation: fadeIn 1.2s ease both 0.3s;
+  }
+
+  .hero-pattern {
+    position: absolute;
+    inset: 0;
+    background: 
+      repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 30px,
+        rgba(200, 96, 58, 0.06) 30px,
+        rgba(200, 96, 58, 0.06) 31px
+      );
+  }
+
+  .hero-visual-content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 4rem;
+  }
+
+  .big-stat {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(5rem, 10vw, 9rem);
+    font-weight: 900;
+    color: var(--terracotta);
+    line-height: 1;
+    animation: countUp 2s ease both 0.8s;
+  }
+
+  .big-stat-label {
+    font-size: 0.8rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-top: 0.5rem;
+    margin-bottom: 3rem;
+  }
+
+  .hero-mini-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    width: 100%;
+  }
+
+  .mini-stat {
+    border: 1px solid rgba(200, 96, 58, 0.3);
+    padding: 1.2rem;
+    text-align: center;
+  }
+
+  .mini-stat-num {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--ochre);
+  }
+
+  .mini-stat-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.4);
+    margin-top: 0.3rem;
+  }
+
+  /* ABOUT STRIP */
+  .about-strip {
+    background: var(--terracotta);
+    padding: 2rem 6rem;
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .strip-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    white-space: nowrap;
+    color: rgba(255,255,255,0.9);
+    font-size: 0.82rem;
+    letter-spacing: 0.08em;
+  }
+
+  .strip-dot {
+    width: 5px;
+    height: 5px;
+    background: rgba(255,255,255,0.5);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  /* SECTION COMMON */
+  section {
+    padding: 6rem 6rem;
+  }
+
+  .section-label {
+    font-size: 0.7rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 1rem;
+  }
+
+  .section-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 3.5vw, 3rem);
+    font-weight: 700;
+    color: var(--charcoal);
+    line-height: 1.15;
+    margin-bottom: 3rem;
+  }
+
+  /* CONTENT PILLARS */
+  .pillars {
+    background: var(--warm-white);
+  }
+
+  .pillars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+    margin-top: 1rem;
+  }
+
+  .pillar-card {
+    background: var(--cream);
+    padding: 3rem 2.5rem;
+    border-top: 3px solid transparent;
+    transition: border-color 0.3s, transform 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pillar-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--terracotta);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+  }
+
+  .pillar-card:hover::before { transform: scaleX(1); }
+  .pillar-card:hover { transform: translateY(-4px); }
+
+  .pillar-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .pillar-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    color: var(--charcoal);
+  }
+
+  .pillar-desc {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--mid);
+  }
+
+  /* STATS SECTION */
+  .stats-section {
+    background: var(--charcoal);
+    padding: 5rem 6rem;
+  }
+
+  .stats-section .section-label { color: var(--ochre); }
+  .stats-section .section-title { color: white; }
+
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3rem;
+    margin-top: 1rem;
+  }
+
+  .stat-block {
+    border-left: 2px solid rgba(200, 96, 58, 0.4);
+    padding-left: 1.5rem;
+  }
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--terracotta);
+    line-height: 1;
+  }
+
+  .stat-suffix {
+    font-size: 1.5rem;
+    color: var(--ochre);
+  }
+
+  .stat-desc {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.5);
+    margin-top: 0.5rem;
+    line-height: 1.5;
+    letter-spacing: 0.03em;
+  }
+
+  /* SKILLS AS CREATOR */
+  .skills-section { background: var(--cream); }
+
+  .skills-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
+  }
+
+  .skills-intro {
+    font-size: 1.05rem;
+    line-height: 1.9;
+    color: var(--mid);
+  }
+
+  .skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .skill-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .skill-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .skill-name {
+    font-size: 0.82rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--charcoal);
+  }
+
+  .skill-pct {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.95rem;
+    color: var(--terracotta);
+  }
+
+  .skill-bar-bg {
+    height: 2px;
+    background: var(--divider);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .skill-bar-fill {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: var(--terracotta);
+    transform-origin: left;
+    animation: barGrow 1.5s cubic-bezier(0.4,0,0.2,1) both;
+    animation-play-state: paused;
+  }
+
+  .skill-bar-fill.animate { animation-play-state: running; }
+
+  @keyframes barGrow {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+
+  /* BRAND STORY */
+  .brand-story {
+    background: var(--warm-white);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    padding: 0;
+  }
+
+  .brand-story-text {
+    padding: 6rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .brand-story-visual {
+    background: var(--sage);
+    position: relative;
+    min-height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+
+  .brand-visual-inner {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 3rem;
+  }
+
+  .brand-quote {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    font-style: italic;
+    color: white;
+    line-height: 1.4;
+    margin-bottom: 1.5rem;
+  }
+
+  .brand-quote-attr {
+    font-size: 0.75rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .brand-circles {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+  }
+
+  .brand-circle {
+    position: absolute;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .story-text {
+    font-size: 1rem;
+    line-height: 1.9;
+    color: var(--mid);
+    margin-bottom: 2rem;
+  }
+
+  /* WHAT I OFFER */
+  .offer-section { background: var(--cream); }
+
+  .offer-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+
+  .offer-card {
+    border: 1px solid var(--divider);
+    padding: 2.5rem;
+    position: relative;
+    transition: border-color 0.3s;
+    background: var(--warm-white);
+  }
+
+  .offer-card:hover { border-color: var(--terracotta); }
+
+  .offer-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 4rem;
+    font-weight: 900;
+    color: var(--divider);
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    line-height: 1;
+  }
+
+  .offer-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    color: var(--charcoal);
+  }
+
+  .offer-desc {
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--mid);
+  }
+
+  /* CONTACT */
+  .contact-section {
+    background: var(--charcoal);
+    text-align: center;
+    padding: 7rem 6rem;
+  }
+
+  .contact-section .section-label { color: var(--ochre); }
+
+  .contact-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    font-weight: 900;
+    color: white;
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+
+  .contact-sub {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.5);
+    max-width: 500px;
+    margin: 0 auto 3rem;
+    line-height: 1.8;
+  }
+
+  .contact-links {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .contact-btn {
+    padding: 0.9rem 2.2rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+
+  .contact-btn-primary {
+    background: var(--terracotta);
+    color: white;
+  }
+
+  .contact-btn-primary:hover { background: var(--terracotta-light); }
+
+  .contact-btn-outline {
+    border: 1px solid rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.7);
+  }
+
+  .contact-btn-outline:hover {
+    border-color: var(--ochre);
+    color: var(--ochre);
+  }
+
+  /* FOOTER */
+  footer {
+    background: #1a1a1a;
+    padding: 2rem 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-brand {
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    color: var(--terracotta);
+    font-size: 1rem;
+  }
+
+  .footer-copy {
+    font-size: 0.75rem;
+    color: rgba(255,255,255,0.25);
+    letter-spacing: 0.05em;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+
+  @keyframes countUp {
+    from { opacity: 0; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1); }
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 1rem 2rem; }
+    .nav-links { display: none; }
+    .hero { grid-template-columns: 1fr; }
+    .hero-right { min-height: 350px; }
+    .hero-left { padding: 8rem 2rem 3rem; }
+    section { padding: 4rem 2rem; }
+    .pillars-grid { grid-template-columns: 1fr; }
+    .stats-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+    .skills-layout { grid-template-columns: 1fr; }
+    .brand-story { grid-template-columns: 1fr; }
+    .brand-story-text { padding: 3rem 2rem; }
+    .offer-grid { grid-template-columns: 1fr; }
+    .about-strip { padding: 1.5rem 2rem; gap: 2rem; flex-wrap: wrap; }
+    footer { flex-direction: column; gap: 1rem; text-align: center; }
+    .contact-section { padding: 4rem 2rem; }
+    .stats-section { padding: 4rem 2rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Spatula Smiles &amp; Lifestyle</div>
+  <ul class="nav-links">
+    <li><a href="file:///C:/Users/Stuti/OneDrive/Desktop/spatula_smiles_portfolio.html#pillars">Content</a></li>
+    <li><a href="file:///C:/Users/Stuti/OneDrive/Desktop/spatula_smiles_portfolio.html#stats">Impact</a></li>
+    <li><a href="file:///C:/Users/Stuti/OneDrive/Desktop/spatula_smiles_portfolio.html#skills">Skills</a></li>
+    <li><a href="file:///C:/Users/Stuti/OneDrive/Desktop/spatula_smiles_portfolio.html#story">Story</a></li>
+    <li><a href="file:///C:/Users/Stuti/OneDrive/Desktop/spatula_smiles_portfolio.html#contact">Connect</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero" style="padding:0;">
+  <div class="hero-left">
+    <p class="hero-eyebrow">Digital Content Creator · YouTuber · Marketer</p>
+    <h1 class="hero-name">Sneha<br>Pandit</h1>
+    <p class="hero-channel">Spatula Smiles &amp; Lifestyle</p>
+    <p class="hero-desc">
+      Storyteller, content strategist, and lifestyle creator bringing warmth, authenticity, and data-driven growth to every frame — built from zero, one video at a time.
+    </p>
+    <a href="https://www.youtube.com/@spatulasmilesandlifestyle" target="_blank" class="hero-cta">
+      ▶ &nbsp; Watch on YouTube
+    </a>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-pattern"></div>
+    <div class="hero-visual-content">
+      <div class="big-stat">1,350<span style="font-size:3rem; color: var(--ochre);">+</span></div>
+      <p class="big-stat-label">YouTube Subscribers</p>
+      <div class="hero-mini-stats">
+        <div class="mini-stat">
+          <div class="mini-stat-num">6+</div>
+          <div class="mini-stat-label">Years Creating</div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-stat-num">100%</div>
+          <div class="mini-stat-label">Organic Growth</div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-stat-num">SEO</div>
+          <div class="mini-stat-label">Driven Strategy</div>
+        </div>
+        <div class="mini-stat">
+          <div class="mini-stat-num">End-to-End</div>
+          <div class="mini-stat-label">Production</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT STRIP -->
+<div class="about-strip">
+  <div class="strip-item"><span class="strip-dot"></span> MBA Graduate · James Cook University Singapore 2026</div>
+  <div class="strip-item"><span class="strip-dot"></span> 8+ Years Operations &amp; Marketing Experience</div>
+  <div class="strip-item"><span class="strip-dot"></span> Open to Opportunities · Singapore · Australia · India · Malaysia</div>
+  <div class="strip-item"><span class="strip-dot"></span> AI &amp; Digital Marketing Specialist</div>
+</div>
+
+<!-- CONTENT PILLARS -->
+<section class="pillars" id="pillars">
+  <p class="section-label reveal">What I Create</p>
+  <h2 class="section-title reveal">Content That Connects,<br><em style="font-family:&#39;Playfair Display&#39;,serif; font-style:italic;">Informs &amp; Inspires</em></h2>
+  <div class="pillars-grid">
+    <div class="pillar-card reveal">
+      <div class="pillar-icon">🍳</div>
+      <h3 class="pillar-title">Food &amp; Recipes</h3>
+      <p class="pillar-desc">Home cooking made accessible and delightful. From everyday meals to special occasion dishes, each video balances visual storytelling with practical instruction.</p>
+    </div>
+    <div class="pillar-card reveal">
+      <div class="pillar-icon">✨</div>
+      <h3 class="pillar-title">Lifestyle &amp; Wellness</h3>
+      <p class="pillar-desc">Authentic day-in-the-life content, wellness routines, and mindful living — designed for audiences navigating modern, busy lives with intention.</p>
+    </div>
+    <div class="pillar-card reveal">
+      <div class="pillar-icon">🌏</div>
+      <h3 class="pillar-title">Culture &amp; Travel</h3>
+      <p class="pillar-desc">Celebrating heritage, traditions, and cross-cultural experiences. Grounded in research and personal storytelling for audiences across South &amp; Southeast Asia.</p>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats-section" id="stats">
+  <p class="section-label reveal">Channel Impact</p>
+  <h2 class="section-title reveal">Numbers That<br><em style="font-family:&#39;Playfair Display&#39;,serif; font-style:italic;">Tell the Story</em></h2>
+  <div class="stats-grid">
+    <div class="stat-block reveal">
+      <div class="stat-number">1,350<span class="stat-suffix">+</span></div>
+      <p class="stat-desc">Subscribers grown organically from zero through consistent SEO-driven content</p>
+    </div>
+    <div class="stat-block reveal">
+      <div class="stat-number">6<span class="stat-suffix">yrs</span></div>
+      <p class="stat-desc">Years of consistent content creation, production, and community building</p>
+    </div>
+    <div class="stat-block reveal">
+      <div class="stat-number">100<span class="stat-suffix">%</span></div>
+      <p class="stat-desc">Self-produced — scripting, filming, editing, SEO, thumbnails, and publishing</p>
+    </div>
+    <div class="stat-block reveal">
+      <div class="stat-number">0<span class="stat-suffix">→</span></div>
+      <p class="stat-desc">Built from nothing to a growing community with no agency, no paid ads, no shortcuts</p>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section class="skills-section" id="skills">
+  <p class="section-label reveal">Creator Toolkit</p>
+  <h2 class="section-title reveal">Skills Behind<br><em style="font-family:&#39;Playfair Display&#39;,serif; font-style:italic;">Every Video</em></h2>
+  <div class="skills-layout">
+    <div class="skills-intro reveal">
+      <p style="margin-bottom:1.5rem;">
+        Running a YouTube channel is running a small media business. Every video involves strategy, production, marketing, and analytics — skills that translate directly into professional digital marketing and content roles.
+      </p>
+      <p>
+        From keyword research before a single frame is shot, to post-publish analytics that inform the next video — the workflow is data-driven, creative, and entirely self-managed.
+      </p>
+    </div>
+    <div class="skills-list reveal">
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name">Content Strategy &amp; SEO</span>
+          <span class="skill-pct">95%</span>
+        </div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:95%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name">Video Production &amp; Editing</span>
+          <span class="skill-pct">90%</span>
+        </div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:90%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name">Audience &amp; Analytics</span>
+          <span class="skill-pct">85%</span>
+        </div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:85%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name">Brand Storytelling</span>
+          <span class="skill-pct">95%</span>
+        </div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:95%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name">Social Media Marketing</span>
+          <span class="skill-pct">88%</span>
+        </div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:88%"></div></div>
+      </div>
+      <div class="skill-item">
+        <div class="skill-header">
+          <span class="skill-name">AI Tools &amp; Generative AI</span>
+          <span class="skill-pct">80%</span>
+        </div>
+        <div class="skill-bar-bg"><div class="skill-bar-fill" style="width:80%"></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRAND STORY -->
+<div class="brand-story" id="story">
+  <div class="brand-story-text">
+    <p class="section-label reveal">The Story</p>
+    <h2 class="section-title reveal" style="margin-bottom:1.5rem;">From Classroom<br><em style="font-family:&#39;Playfair Display&#39;,serif;">to Camera</em></h2>
+    <p class="story-text reveal">
+      Before the channel, there was a classroom. For nearly 9 years, I taught English, History, and Science — learning that communication is everything. That a story told well changes minds.
+    </p>
+    <p class="story-text reveal">
+      Spatula Smiles &amp; Lifestyle started in 2020 as a creative outlet. It grew into something more: a real exercise in brand-building, digital strategy, and community. Every subscriber came organically, through consistency and genuine connection.
+    </p>
+    <p class="story-text reveal">
+      Today, backed by an MBA and 8+ years of corporate operations experience, I bring both creative instinct and analytical rigour to everything I produce. This channel is my proof of concept.
+    </p>
+  </div>
+
+  <div class="brand-story-visual">
+    <div class="brand-circles">
+      <div class="brand-circle" style="width:400px;height:400px;top:-100px;left:-100px;"></div>
+      <div class="brand-circle" style="width:250px;height:250px;bottom:50px;right:50px;"></div>
+      <div class="brand-circle" style="width:150px;height:150px;top:50%;left:50%;transform:translate(-50%,-50%);"></div>
+    </div>
+    <div class="brand-visual-inner">
+      <p class="brand-quote">"Built from zero.<br>One video,<br>one subscriber<br>at a time."</p>
+      <p class="brand-quote-attr">— Sneha Pandit, Spatula Smiles &amp; Lifestyle</p>
+    </div>
+  </div>
+</div>
+
+<!-- WHAT I OFFER -->
+<section class="offer-section" id="offer">
+  <p class="section-label reveal">Open To</p>
+  <h2 class="section-title reveal">How We Can<br><em style="font-family:&#39;Playfair Display&#39;,serif; font-style:italic;">Work Together</em></h2>
+  <div class="offer-grid">
+    <div class="offer-card reveal">
+      <div class="offer-number">01</div>
+      <h3 class="offer-title">Brand Collaborations</h3>
+      <p class="offer-desc">Authentic product integrations, sponsored content, and campaign partnerships — especially in food, lifestyle, wellness, and home categories.</p>
+    </div>
+    <div class="offer-card reveal">
+      <div class="offer-number">02</div>
+      <h3 class="offer-title">Digital Marketing Roles</h3>
+      <p class="offer-desc">Marketing Executive, Social Media Manager, Content Strategist, or Digital Marketing Coordinator positions across Singapore, Australia, India, and Malaysia.</p>
+    </div>
+    <div class="offer-card reveal">
+      <div class="offer-number">03</div>
+      <h3 class="offer-title">Content Strategy Consulting</h3>
+      <p class="offer-desc">Helping brands and businesses develop their YouTube or social media content strategy, drawing on 6+ years of first-hand creator experience.</p>
+    </div>
+    <div class="offer-card reveal">
+      <div class="offer-number">04</div>
+      <h3 class="offer-title">Operations &amp; EA Roles</h3>
+      <p class="offer-desc">Executive Administration, Operations Coordinator, or project management positions — backed by 8+ years at Forbes Marshall managing logistics, reporting, and cross-functional teams.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <p class="section-label">Let's Connect</p>
+  <h2 class="contact-title">Ready to Create<br>Something Together?</h2>
+  <p class="contact-sub">Whether it's a collaboration, a job opportunity, or just a conversation — I'd love to hear from you.</p>
+  <div class="contact-links">
+    <a href="https://www.youtube.com/@spatulasmilesandlifestyle" target="_blank" class="contact-btn contact-btn-primary">▶ &nbsp; YouTube Channel</a>
+    <a href="https://www.linkedin.com/in/snehapandit-3b9493297" target="_blank" class="contact-btn contact-btn-outline">LinkedIn Profile</a>
+    <a href="mailto:snehagorde@icloud.com" class="contact-btn contact-btn-outline">Email Me</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">Spatula Smiles &amp; Lifestyle</div>
+  <div class="footer-copy">© 2026 Sneha Pandit · All rights reserved</div>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add('visible');
+          // Animate skill bars
+          const bar = entry.target.querySelector('.skill-bar-fill');
+          if (bar) bar.classList.add('animate');
+        }, i * 80);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  reveals.forEach(el => observer.observe(el));
+
+  // Animate all skill bars when section is visible
+  const skillBars = document.querySelectorAll('.skill-bar-fill');
+  const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animate');
+        skillObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  skillBars.forEach(bar => skillObserver.observe(bar));
+</script>
+
+
+</body></html>
